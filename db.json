@@ -1,0 +1,19 @@
+{
+  "reservations": [
+    {
+      "id": "f4b2",
+      "areaId": "1",
+      "name": "Maryam Hina",
+      "email": "maryamhina91@hotmail.com",
+      "date": "2025-07-02",
+      "time": "09:00"
+    }
+  ],
+  "areas": [
+    { "id": 1, "name": "Boyd Conservation Park" },
+    { "id": 2, "name": "Kortright Centre for Conservation" },
+    { "id": 3, "name": "Bindertwine Park" },
+    { "id": 4, "name": "Sonoma Heights Park" },
+    { "id": 5, "name": "Sugarbush Heritage Park" }
+  ]
+}

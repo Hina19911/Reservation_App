@@ -1,0 +1,62 @@
+<!-- Form for users to reserve a time slot at a conservation area -->
+<div class="container mt-4">
+  <div class="row">
+    <!-- 📄 Left Column: Reservation Form -->
+    <div class="col-md-8">
+      <h2>Make a Reservation</h2>
+
+      <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="areaId" class="form-label">Select Area</label>
+          <select id="areaId" class="form-select" formControlName="areaId">
+            <option [ngValue]="null">-- Choose an Area --</option>
+            <option *ngFor="let area of areas" [value]="area.id">{{ area.name }}</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input id="name" type="text" class="form-control" formControlName="name" />
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input id="email" type="email" class="form-control" formControlName="email" />
+        </div>
+
+        <div class="mb-3">
+          <label for="date" class="form-label">Date</label>
+          <input id="date" type="date" class="form-control" formControlName="date" />
+        </div>
+
+        <div class="mb-3">
+          <label for="time" class="form-label">Time</label>
+          <select id="time" class="form-select" formControlName="time">
+            <option [ngValue]="null">-- Select a Time Slot --</option>
+            <option *ngFor="let time of timeSlots" [value]="time">{{ time }}</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100" [disabled]="reservationForm.invalid">
+          Submit Reservation
+        </button>
+      </form>
+    </div>
+
+    <!-- 🛒 Right Column: Little Cart Box -->
+    <div class="col-md-4">
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <strong>Reservation Summary</strong>
+        </div>
+        <div class="card-body">
+          <p><strong>Area:</strong> {{ reservationForm.value.areaId || 'None' }}</p>
+          <p><strong>Name:</strong> {{ reservationForm.value.name || '-' }}</p>
+          <p><strong>Email:</strong> {{ reservationForm.value.email || '-' }}</p>
+          <p><strong>Date:</strong> {{ reservationForm.value.date || '-' }}</p>
+          <p><strong>Time:</strong> {{ reservationForm.value.time || '-' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

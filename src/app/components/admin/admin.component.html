@@ -1,0 +1,26 @@
+<!-- admin.component.html -->
+<h2>All Reservations</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Area ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Date</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let res of reservations">
+      <td>{{ res.id }}</td>
+      <td>{{ res.areaId }}</td>
+      <td>{{ res.name }}</td>
+      <td>{{ res.email }}</td>
+      <td>{{ res.date }}</td>
+      <td>{{ res.time }}</td>
+    </tr>
+  </tbody>
+</table>
+
